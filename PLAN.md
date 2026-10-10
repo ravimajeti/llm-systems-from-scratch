@@ -17,7 +17,7 @@
 
 ## Model
 
-- Llama-style decoder, ~124M params (12 layers, d=768): RoPE, RMSNorm, SwiGLU, no biases.
+- Llama-style decoder, ~114M params (12 layers, d=768; GPT-2-small scale): RoPE, RMSNorm, SwiGLU, no biases.
 - Modern features: grouped-query attention, QK-norm, packed sequences with per-document attention masking.
 - Later: a DeepSeek-style fine-grained MoE variant.
 - Data: FineWeb-Edu, GPT-2 tokenizer.

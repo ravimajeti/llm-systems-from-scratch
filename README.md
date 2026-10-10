@@ -1,6 +1,6 @@
 # llm-systems-from-scratch
 
-A small Llama-style LLM (~124M params: RoPE, RMSNorm, SwiGLU, GQA, QK-norm, document-masked packing), trained
+A small Llama-style LLM (~114M params, GPT-2-small scale: RoPE, RMSNorm, SwiGLU, GQA, QK-norm, document-masked packing), trained
 from scratch and then made fast **one measured bottleneck at a time**: input pipeline, numerics, Triton/CUDA
 kernels, memory, distributed training, FP8, and later an inference engine benchmarked against vLLM.
 
@@ -20,8 +20,9 @@ uv run pytest
 ## Layout
 
 ```text
-src/llmsys/   library code
-tests/        correctness tests (CPU-runnable; run in CI)
+src/llmsys/     library code (model.py: baseline model)
+tests/          correctness tests (CPU-runnable; run in CI)
+docs/designs/   design docs (start with baseline-model.md)
 ```
 
 ## License

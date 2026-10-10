@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Data, runs, artifacts (large; never commit)
+data/
+runs/
+checkpoints/
+*.bin
+*.pt
+*.safetensors
+*.nsys-rep
+*.ncu-rep
+*.qdrep
+memory_snapshot*.pickle
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+
+# Personal planning notes (kept local)
+ROADMAP.md

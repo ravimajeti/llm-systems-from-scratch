@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  correctness:
+    # CPU-only correctness job. The GPU perf-regression job (predicted vs measured) is added in Week 2.
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --locked --extra cpu
+      - name: Lint
+        run: uv run ruff check .
+      - name: Test
+        run: uv run pytest -q
